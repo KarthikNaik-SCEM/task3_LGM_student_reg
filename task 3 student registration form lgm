@@ -1,0 +1,332 @@
+//html code
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="box">
+        <h1>Student Registration Form</h1>
+        <div class="container">
+            <div class="form">
+                <h2>Form</h2>
+                <form>
+                    <div class="name">
+                        <label for="name">Name :</label>
+                        <input type="text" id="name" placeholder="ex.xyz" required>
+                    </div>
+                    <div class="email">
+                        <label for="email">Email :</label>
+                        <input type="email" id="email" placeholder="ex. abc@xyz.com" required>
+                    </div>
+                    <div class="website">
+                        <label for="website">Website :</label>
+                        <input type="url" id="website" placeholder="ex. xyz.com" required>
+                    </div>
+                    <div class="image">
+                        <label for="url">Image URL: <span>(jpg,png etc.format)</span></label>
+                        <input type="url" id="url" placeholder="ex. https://xyz.jpg"
+                            value="https://st.depositphotos.com/2101611/3923/v/450/depositphotos_39238767-stock-illustration-businessman-avatar-profile-picture.jpg"
+                            required>
+                    </div>
+                    <div class="gender">
+                        <label for="gender">Gender: </label>
+                        <input type="radio" name="male-female" id="male" value="Male" checked required>Male
+                        <input type="radio" name="male-female" id="female" value="Female">Female
+                    </div>
+                    <div class="skills">
+                        <label for="skills">Skills :</label>
+                        <input type="checkbox" value="C++" id="cpp" class="checkbox" checked>C++
+                        <input type="checkbox" value="C" id="c" class="checkbox">C
+                        <input type="checkbox" value="HTML" id="html" class="checkbox">HTML
+                        <input type="checkbox" value="CSS" id="css" class="checkbox">CSS
+                    </div>
+                    <div class="button">
+                        <button type="button" id="submit">Submit</button>
+                        <button type="reset" id="reset">Reset</button>
+                    </div>
+                </form>
+            </div>
+            <div class="output">
+                <h2>Student Details</h2>
+                <div class="cardContainer" id="cardContainer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
+
+//css code
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: #111c52;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #574418, #079f50);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom,#7f601a, #1e3bcc);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem 0;
+    color: #102dbe;
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+    height: 85vh;
+    display: flex;
+    flex-basis: 50%;
+    background-color: #ea7f0e;
+    color: rgb(115, 7, 92);
+    border-radius: 1rem;
+    font-size: 14px;
+    justify-content: space-evenly;
+    margin-bottom: 5rem;
+}
+
+.form {
+    padding: 2rem;
+    width: 50%;
+    height: 100%;
+    background-color: #7085ed;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="url"] {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    border: none;
+    outline: none;
+}
+
+.form button {
+    width: 30%;
+    padding: 0.4rem 0;
+    border-radius: 0.3rem;
+    border: none;
+    outline: none;
+    margin-right: 1rem;
+    margin-top: 0.6rem;
+}
+
+#submit{
+    background-color: #0d4fea;
+    color: rgb(131, 212, 131);
+}
+
+#reset{
+    background-color: #10950d;
+    color: rgb(156, 10, 119);
+}
+
+.form input {
+    margin: 0.7rem;
+}
+
+.output {
+    width: 50%;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.output .cardContainer {
+    height: 90%;
+    overflow-y: auto;
+}
+
+.output .card {
+    width: 100%;
+    height: auto;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 0.3rem 0;
+    word-wrap: break-word;
+    line-break: strict;
+}
+
+.card img {
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+    width: 130px;
+    height: 150px;
+}
+
+.card .info {
+    text-align: left;
+}
+
+.card .info a {
+    color: rgb(21, 133, 150);
+}
+
+.card .info button {
+    padding: 2px 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    bottom: none;
+    outline: none;
+}
+
+@media (max-width:1200px) {
+
+    .container {
+        height: 90vh;
+        margin-bottom: 5rem;
+    }
+
+    .cardContainer {
+        height: 70%;
+        overflow-y: auto;
+    }
+
+    .output .card {
+        display: block;
+        text-align: center;
+    }
+}
+
+@media (max-width:900px) {
+    .container {
+        flex-basis: auto;
+        display: block;
+        width: 90%;
+        height: auto;
+    }
+
+    .form {
+        width: 100%;
+        height: auto;
+    }
+
+    .output {
+        width: 100%;
+        margin: 5rem auto;
+    }
+
+    .output .cardContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 241px));
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+//javascript code
+
+let submitBtn = document.getElementById("submit");
+
+const info = {
+    student_name: '',
+    email: '',
+    url: '',
+    website: '',
+    gender: '',
+    skillArr: [],
+}
+
+const getData = () => {
+    info.student_name = document.getElementById('name').value;
+    info.email = document.getElementById('email').value;
+    info.url = document.getElementById('url').value;
+    info.website = document.getElementById('website').value;
+    info.gender = document.querySelector('input[name="male-female"]:checked').value;
+    let skills = document.querySelectorAll('.checkbox:checked');
+
+    info.skillArr = [];
+    skills.forEach((item) => {
+        info.skillArr.push(item.value);
+    })
+
+    if (localStorage.getItem("infoSection") === null) {
+        infoItem = [];
+    }
+    else {
+        infoItem = JSON.parse(localStorage.getItem("infoSection"))
+    }
+    infoItem.push(info);
+    localStorage.setItem("infoSection", JSON.stringify(infoItem));
+}
+
+const showData = () => {
+    let cardContainer = document.getElementById("cardContainer");
+
+    let cards = '';
+
+    let getLocalStorage = localStorage.getItem("infoSection");
+
+    if (getLocalStorage === null) {
+        console.log("null");
+    }
+    else {
+        cardDivArr = JSON.parse(getLocalStorage);
+
+        cardDivArr.forEach((item, index) => {
+
+            cards += `<div class="card">
+            <img src=${item.url} alt="Profile Picture">
+            <div class="info">
+                <p>Name : ${item.student_name}</p>
+                <p>Email : ${item.email}</p>
+                <p>Website : <a href="${item.website}">Click here</a></p>
+                <p>Gender : ${item.gender}</p>
+                <p>Skills : ${item.skillArr.join(", ")}</p>
+                <button onclick="deleteData(${index})">Delete</button>
+            </div>
+        </div>`;
+        })
+    }
+    cardContainer.innerHTML = cards;
+}
+
+const deleteData = (index) => {
+    let getList = JSON.parse(localStorage.getItem("infoSection"));
+    getList.splice(index, 1);
+
+    localStorage.setItem("infoSection", JSON.stringify(getList));
+    window.location.reload();
+}
+
+showData();
+
+submitBtn.addEventListener(('click'), () => {
+    getData();
+    // console.log(student_name, email, url, website, gender, skillArr);
+    showData();
+})
